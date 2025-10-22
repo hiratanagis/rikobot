@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   const [activeTab, setActiveTab] = useState('home');
-  const [activeCommandTab, setActiveCommandTab] = useState('music');
+  const [activeCommandTab, setActiveCommandTab] = useState('admin');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Scroll to top when changing tabs
