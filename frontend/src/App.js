@@ -12,72 +12,135 @@ function App() {
   }, [activeTab]);
 
   const commandsData = {
-    music: [
-      { name: 'play', desc: 'Play a song from YouTube' },
-      { name: 'pause', desc: 'Pause the current song' },
-      { name: 'resume', desc: 'Resume the paused song' },
-      { name: 'skip', desc: 'Skip to the next song' },
-      { name: 'stop', desc: 'Stop the music and clear the queue' },
-      { name: 'queue', desc: 'View the current music queue' },
-      { name: 'nowplaying', desc: 'Show the currently playing song' },
-      { name: 'volume', desc: 'Adjust the music volume' },
-      { name: 'loop', desc: 'Loop the current song' },
-      { name: 'shuffle', desc: 'Shuffle the queue' }
+    admin: [
+      { name: 'aichat', desc: 'Setup AI Chat channel' },
+      { name: 'autorole', desc: 'setup role to be given when a member joins the server' },
+      { name: 'counter', desc: 'setup counter channel in the guild' },
+      { name: 'embed', desc: 'send embed message' },
+      { name: 'flagtranslation', desc: 'configure flag translation in the server' },
+      { name: 'globalchat', desc: 'Setup or manage the globalchat system for your server' },
+      { name: 'farewell', desc: 'setup farewell message' },
+      { name: 'welcome', desc: 'setup welcome message' },
+      { name: 'maxwarn', desc: 'set max warnings configuration' },
+      { name: 'modlog', desc: 'enable or disable moderation logs' },
+      { name: 'addrr', desc: 'setup reaction role for the specified message' },
+      { name: 'removerr', desc: 'remove configured reaction for the specified message' },
+      { name: 'setprefix', desc: 'sets a new prefix for this server' }
     ],
-    moderation: [
-      { name: 'ban', desc: 'Ban a member from the server' },
-      { name: 'kick', desc: 'Kick a member from the server' },
-      { name: 'timeout', desc: 'Timeout a member' },
-      { name: 'warn', desc: 'Warn a member' },
-      { name: 'mute', desc: 'Mute a member' },
-      { name: 'unmute', desc: 'Unmute a member' },
-      { name: 'clear', desc: 'Clear messages from a channel' },
-      { name: 'slowmode', desc: 'Set slowmode for a channel' },
-      { name: 'lock', desc: 'Lock a channel' },
-      { name: 'unlock', desc: 'Unlock a channel' }
+    automod: [
+      { name: 'anti', desc: 'manage various automod settings for the server' },
+      { name: 'autodelete', desc: 'manage the autodelete settings for the server' },
+      { name: 'automod', desc: 'various automod configuration' }
     ],
-    fun: [
-      { name: 'meme', desc: 'Get a random meme' },
-      { name: '8ball', desc: 'Ask the magic 8ball' },
-      { name: 'joke', desc: 'Get a random joke' },
-      { name: 'gif', desc: 'Search for a GIF' },
-      { name: 'avatar', desc: 'Get user avatar' },
-      { name: 'roll', desc: 'Roll a dice' },
-      { name: 'flip', desc: 'Flip a coin' },
-      { name: 'rate', desc: 'Rate something' },
-      { name: 'roast', desc: 'Get roasted by Riko' },
-      { name: 'fact', desc: 'Get a random fact' }
-    ],
-    utility: [
-      { name: 'serverinfo', desc: 'Get server information' },
-      { name: 'userinfo', desc: 'Get user information' },
-      { name: 'weather', desc: 'Check weather for a location' },
-      { name: 'remind', desc: 'Set a reminder' },
-      { name: 'poll', desc: 'Create a poll' },
-      { name: 'translate', desc: 'Translate text' },
-      { name: 'search', desc: 'Search the web' },
-      { name: 'calculate', desc: 'Perform calculations' },
-      { name: 'embed', desc: 'Create custom embeds' },
-      { name: 'afk', desc: 'Set AFK status' }
+    anime: [
+      { name: 'react', desc: 'anime reactions' }
     ],
     economy: [
-      { name: 'balance', desc: 'Check your balance' },
-      { name: 'daily', desc: 'Claim daily rewards' },
-      { name: 'work', desc: 'Work to earn coins' },
-      { name: 'shop', desc: 'View the shop' },
-      { name: 'buy', desc: 'Buy items from shop' },
-      { name: 'inventory', desc: 'View your inventory' },
-      { name: 'give', desc: 'Give coins to someone' },
-      { name: 'rob', desc: 'Rob another user' },
-      { name: 'leaderboard', desc: 'View economy leaderboard' },
-      { name: 'gamble', desc: 'Gamble your coins' }
+      { name: 'bank', desc: 'access to bank operations' },
+      { name: 'beg', desc: 'beg from someone' },
+      { name: 'daily', desc: 'receive a daily bonus' },
+      { name: 'gamble', desc: 'try your luck by gambling' }
     ],
-    leveling: [
-      { name: 'rank', desc: 'Check your rank' },
-      { name: 'leaderboard', desc: 'View server leaderboard' },
-      { name: 'setlevel', desc: 'Set user level (Admin)' },
-      { name: 'setxp', desc: 'Set user XP (Admin)' },
-      { name: 'resetrank', desc: 'Reset user rank (Admin)' }
+    fun: [
+      { name: 'facts', desc: 'shows a random animal facts' },
+      { name: 'flip', desc: 'flips a coin or message' },
+      { name: 'meme', desc: 'get a random meme' },
+      { name: 'snake', desc: 'play snake game on discord' },
+      { name: 'together', desc: 'discord together' }
+    ],
+    giveaway: [
+      { name: 'giveaway', desc: 'giveaway commands' }
+    ],
+    invites: [
+      { name: 'addinvites', desc: 'add invites to a member' },
+      { name: 'invitecodes', desc: 'list all your invites codes in this guild' },
+      { name: 'inviter', desc: 'shows inviter information' },
+      { name: 'inviterank', desc: 'configure invite ranks' },
+      { name: 'inviteranks', desc: 'shows the invite ranks configured on this guild' },
+      { name: 'invites', desc: 'shows number of invites in this server' },
+      { name: 'invitesimport', desc: 'add existing guild invites to users' },
+      { name: 'invitetracker', desc: 'enable or disable invite tracking in the server' },
+      { name: 'resetinvites', desc: 'clear a users added invites' }
+    ],
+    information: [
+      { name: 'leaderboard', desc: 'display the XP, invite and rep leaderboard' },
+      { name: 'avatar', desc: 'shows a users avatar information' },
+      { name: 'botinvite', desc: 'gives you bot invite' },
+      { name: 'botstats', desc: 'shows bot information' },
+      { name: 'channelinfo', desc: 'shows information about a channel' },
+      { name: 'emojiinfo', desc: 'shows info about an emoji' },
+      { name: 'guildinfo', desc: 'shows information about the server' },
+      { name: 'uptime', desc: 'gives you bot uptime' },
+      { name: 'userinfo', desc: 'shows information about the user' },
+      { name: 'ping', desc: 'shows the current ping from the bot to the discord servers' }
+    ],
+    moderation: [
+      { name: 'ban', desc: 'bans the specified member' },
+      { name: 'kick', desc: 'kicks the specified member' },
+      { name: 'deafen', desc: 'deafen specified member in voice channels' },
+      { name: 'disconnect', desc: 'disconnect specified member from voice channel' },
+      { name: 'move', desc: 'move specified member to voice channel' },
+      { name: 'purge', desc: 'deletes the specified amount of messages' },
+      { name: 'purgeattach', desc: 'deletes the specified amount of messages with attachments' },
+      { name: 'purgebots', desc: 'deletes the specified amount of messages from bots' },
+      { name: 'purgelinks', desc: 'deletes the specified amount of messages with links' },
+      { name: 'purgetoken', desc: 'deletes the specified amount of messages containing the token' },
+      { name: 'purgeuser', desc: 'deletes the specified amount of messages' },
+      { name: 'undeafen', desc: 'undeafen specified member in voice channels' },
+      { name: 'vmute', desc: "mutes specified member's voice" },
+      { name: 'vunmute', desc: "unmutes specified member's voice" },
+      { name: 'nick', desc: 'nickname commands' },
+      { name: 'softban', desc: 'softban the specified member. Kicks and deletes messages' },
+      { name: 'timeout', desc: 'timeouts the specified member' },
+      { name: 'unban', desc: 'unbans the specified member' },
+      { name: 'untimeout', desc: 'remove timeout from a member' },
+      { name: 'warn', desc: 'warns the specified member' },
+      { name: 'warnings', desc: 'list or clear user warnings' }
+    ],
+    music: [
+      { name: 'bassboost', desc: 'set bassboost level' },
+      { name: 'loop', desc: 'loops the song or queue' },
+      { name: 'lyrics', desc: 'find lyrics of the song' },
+      { name: 'nowplaying', desc: "show's what track is currently being played" },
+      { name: 'pause', desc: 'pause the music player' },
+      { name: 'play', desc: 'play a song from youtube' },
+      { name: 'queue', desc: 'displays the current music queue' },
+      { name: 'resume', desc: 'resumes the music player' },
+      { name: 'search', desc: 'search for matching songs on youtube' },
+      { name: 'seek', desc: "sets the playing track's position to the specified position" },
+      { name: 'shuffle', desc: 'shuffle the queue' },
+      { name: 'skip', desc: 'skip the current song' },
+      { name: 'stop', desc: 'stop the music player' },
+      { name: 'volume', desc: 'set the music player volume' }
+    ],
+    social: [
+      { name: 'rep', desc: 'give reputation to a user' }
+    ],
+    rank: [
+      { name: 'rank', desc: "Displays a member's rank in this server" },
+      { name: 'stats', desc: 'displays members stats in this server' },
+      { name: 'statstracking', desc: 'enable or disable tracking stats in the server' },
+      { name: 'levelup', desc: 'configure the levelling system' }
+    ],
+    suggestion: [
+      { name: 'suggest', desc: 'submit a suggestion' },
+      { name: 'suggestion', desc: 'configure suggestion system' }
+    ],
+    ticket: [
+      { name: 'ticket', desc: 'various ticketing commands' },
+      { name: 'ticketcat', desc: 'manage ticket categories' }
+    ],
+    utility: [
+      { name: 'bigemoji', desc: 'enlarge an emoji' },
+      { name: 'covid', desc: 'get covid statistics for a country' },
+      { name: 'github', desc: 'shows github statistics of a user' },
+      { name: 'help', desc: 'command help menu' },
+      { name: 'paste', desc: 'Paste something in sourceb.in' },
+      { name: 'pokedex', desc: 'shows pokemon information' },
+      { name: 'proxies', desc: 'fetch proxies. Available types: http, socks4, socks5' },
+      { name: 'translate', desc: 'translate from one language to other' },
+      { name: 'urban', desc: 'searches the urban dictionary' },
+      { name: 'weather', desc: 'get weather information' }
     ]
   };
 
