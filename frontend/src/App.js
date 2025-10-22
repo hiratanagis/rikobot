@@ -310,7 +310,7 @@ function App() {
           <section className="commands-section">
             <h2 className="section-title">Bot Commands</h2>
             <p className="text-gray-300 text-center mb-8 max-w-2xl mx-auto">
-              Explore all available commands organized by category. Use the prefix <code className="text-red-400 bg-gray-800 px-2 py-1 rounded">!</code> before each command.
+              Explore all available commands organized by category. Use the prefix <code className="text-red-400 bg-gray-800 px-2 py-1 rounded">!</code> or <code className="text-red-400 bg-gray-800 px-2 py-1 rounded">/</code> before each command.
             </p>
 
             {/* Command Tabs */}
