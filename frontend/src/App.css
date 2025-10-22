@@ -483,8 +483,16 @@ body {
   font-family: 'Courier New', monospace;
 }
 
+.command-alt-prefix {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  font-family: 'Courier New', monospace;
+  margin-left: 0.5rem;
+}
+
 .command-separator {
   color: #6b7280;
+  margin-left: 0.5rem;
 }
 
 .command-desc {
