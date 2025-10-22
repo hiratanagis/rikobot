@@ -227,10 +227,10 @@ function App() {
 
           {/* Desktop Navigation */}
           <div className="nav-links hidden md:flex">
-            <button onClick={() => setActiveTab('home')} className={activeTab === 'home' ? 'nav-link active' : 'nav-link'}>Home</button>
-            <button onClick={() => setActiveTab('commands')} className={activeTab === 'commands' ? 'nav-link active' : 'nav-link'}>Commands</button>
-            <button onClick={() => setActiveTab('tos')} className={activeTab === 'tos' ? 'nav-link active' : 'nav-link'}>TOS</button>
-            <button onClick={() => setActiveTab('privacy')} className={activeTab === 'privacy' ? 'nav-link active' : 'nav-link'}>Privacy</button>
+            <button onClick={() => setActiveTab('home')} href="#home" className={activeTab === 'home' ? 'nav-link active' : 'nav-link'}>Home</button>
+            <button onClick={() => setActiveTab('commands')} href="#commands" className={activeTab === 'commands' ? 'nav-link active' : 'nav-link'}>Commands</button>
+            <button onClick={() => setActiveTab('tos')} href="#tos" className={activeTab === 'tos' ? 'nav-link active' : 'nav-link'}>TOS</button>
+            <button onClick={() => setActiveTab('privacy')} href="#privacy-policy" className={activeTab === 'privacy' ? 'nav-link active' : 'nav-link'}>Privacy</button>
             <a href="https://discord.com/api/oauth2/authorize?client_id=709305478882000918&scope=bot+applications.commands&permissions=3097754271607927" className="btn-primary ml-4">Invite Now</a>
           </div>
 
@@ -245,10 +245,10 @@ function App() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="mobile-menu">
-            <button onClick={() => { setActiveTab('home'); setMobileMenuOpen(false); }} className={activeTab === 'home' ? 'mobile-link active' : 'mobile-link'}>Home</button>
-            <button onClick={() => { setActiveTab('commands'); setMobileMenuOpen(false); }} className={activeTab === 'commands' ? 'mobile-link active' : 'mobile-link'}>Commands</button>
-            <button onClick={() => { setActiveTab('tos'); setMobileMenuOpen(false); }} className={activeTab === 'tos' ? 'mobile-link active' : 'mobile-link'}>TOS</button>
-            <button onClick={() => { setActiveTab('privacy'); setMobileMenuOpen(false); }} className={activeTab === 'privacy' ? 'mobile-link active' : 'mobile-link'}>Privacy</button>
+            <button onClick={() => { setActiveTab('home'); setMobileMenuOpen(false); }} href="#home" className={activeTab === 'home' ? 'mobile-link active' : 'mobile-link'}>Home</button>
+            <button onClick={() => { setActiveTab('commands'); setMobileMenuOpen(false); }} href="#commands" className={activeTab === 'commands' ? 'mobile-link active' : 'mobile-link'}>Commands</button>
+            <button onClick={() => { setActiveTab('tos'); setMobileMenuOpen(false); }} href="#tos" className={activeTab === 'tos' ? 'mobile-link active' : 'mobile-link'}>TOS</button>
+            <button onClick={() => { setActiveTab('privacy'); setMobileMenuOpen(false); }} href="#privacy-policy" className={activeTab === 'privacy' ? 'mobile-link active' : 'mobile-link'}>Privacy</button>
             <a href="https://discord.com/api/oauth2/authorize?client_id=709305478882000918&scope=bot+applications.commands&permissions=3097754271607927" className="btn-primary block text-center mt-4">Invite Now</a>
           </div>
         )}
@@ -270,7 +270,7 @@ function App() {
                 <a href="https://discord.com/api/oauth2/authorize?client_id=709305478882000918&scope=bot+applications.commands&permissions=3097754271607927" className="btn-primary btn-lg bubble-hover">
                   Invite Riko Now
                 </a>
-                <button onClick={() => setActiveTab('commands')} className="btn-secondary btn-lg">
+                <button onClick={() => setActiveTab('commands')} href="#commands" className="btn-secondary btn-lg">
                   View Commands
                 </button>
               </div>
@@ -467,9 +467,9 @@ function App() {
         <div className="footer-content">
           <p>&copy; 2025 Riko Bot. All rights reserved.</p>
           <div className="footer-links">
-            <button onClick={() => setActiveTab('tos')} className="footer-link">Terms of Service</button>
+            <button onClick={() => setActiveTab('tos')} href="#tos" className="footer-link">Terms of Service</button>
             <span className="text-gray-600">•</span>
-            <button onClick={() => setActiveTab('privacy')} className="footer-link">Privacy Policy</button>
+            <button onClick={() => setActiveTab('privacy')} href="#privacy-policy" className="footer-link">Privacy Policy</button>
           </div>
         </div>
       </footer>
