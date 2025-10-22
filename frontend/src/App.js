@@ -231,7 +231,7 @@ function App() {
             <button onClick={() => setActiveTab('commands')} className={activeTab === 'commands' ? 'nav-link active' : 'nav-link'}>Commands</button>
             <button onClick={() => setActiveTab('tos')} className={activeTab === 'tos' ? 'nav-link active' : 'nav-link'}>TOS</button>
             <button onClick={() => setActiveTab('privacy')} className={activeTab === 'privacy' ? 'nav-link active' : 'nav-link'}>Privacy</button>
-            <a href="#invite" className="btn-primary ml-4">Invite Now</a>
+            <a href="https://discord.com/api/oauth2/authorize?client_id=709305478882000918&scope=bot+applications.commands&permissions=3097754271607927" className="btn-primary ml-4">Invite Now</a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -249,7 +249,7 @@ function App() {
             <button onClick={() => { setActiveTab('commands'); setMobileMenuOpen(false); }} className={activeTab === 'commands' ? 'mobile-link active' : 'mobile-link'}>Commands</button>
             <button onClick={() => { setActiveTab('tos'); setMobileMenuOpen(false); }} className={activeTab === 'tos' ? 'mobile-link active' : 'mobile-link'}>TOS</button>
             <button onClick={() => { setActiveTab('privacy'); setMobileMenuOpen(false); }} className={activeTab === 'privacy' ? 'mobile-link active' : 'mobile-link'}>Privacy</button>
-            <a href="#invite" className="btn-primary block text-center mt-4">Invite Now</a>
+            <a href="https://discord.com/api/oauth2/authorize?client_id=709305478882000918&scope=bot+applications.commands&permissions=3097754271607927" className="btn-primary block text-center mt-4">Invite Now</a>
           </div>
         )}
       </nav>
@@ -267,7 +267,7 @@ function App() {
                 The ultimate all-in-one Discord bot to enhance your server with music, moderation, AI chat, and much more!
               </p>
               <div className="hero-buttons animate-slide-up">
-                <a href="#invite" className="btn-primary btn-lg bubble-hover">
+                <a href="https://discord.com/api/oauth2/authorize?client_id=709305478882000918&scope=bot+applications.commands&permissions=3097754271607927" className="btn-primary btn-lg bubble-hover">
                   Invite Riko Now
                 </a>
                 <button onClick={() => setActiveTab('commands')} className="btn-secondary btn-lg">
@@ -296,7 +296,7 @@ function App() {
             <div className="cta-content">
               <h2 className="cta-title">Ready to Enhance Your Server?</h2>
               <p className="cta-subtitle">Join thousands of servers already using Riko Bot</p>
-              <a href="#invite" className="btn-primary btn-lg bubble-hover">
+              <a href="https://discord.com/api/oauth2/authorize?client_id=709305478882000918&scope=bot+applications.commands&permissions=3097754271607927" className="btn-primary btn-lg bubble-hover">
                 Invite Riko to Your Server!
               </a>
             </div>
