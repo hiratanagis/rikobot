@@ -331,6 +331,7 @@ function App() {
               {commandsData[activeCommandTab].map((cmd, idx) => (
                 <div key={idx} className="command-item" style={{ animationDelay: `${idx * 0.05}s` }}>
                   <span className="command-name">!{cmd.name}</span>
+                  <span className="command-alt-prefix">or /{cmd.name}</span>
                   <span className="command-separator">❯</span>
                   <span className="command-desc">{cmd.desc}</span>
                 </div>
