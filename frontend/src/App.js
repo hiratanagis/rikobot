@@ -373,7 +373,7 @@ function App() {
               <p>Riko Bot is provided "as is" without warranties of any kind. We are not liable for any damages resulting from the use or inability to use the bot.</p>
 
               <h3>7. Third-Party Services</h3>
-              <p>The bot may integrate with third-party services (YouTube, Spotify, etc.). Your use of these features is subject to the respective third-party terms.</p>
+              <p>The bot may integrate with third-party services (YouTube, Spotify, Gemini, etc.). Your use of these features is subject to the respective third-party terms.</p>
 
               <h3>8. Termination</h3>
               <p>We reserve the right to terminate or restrict access to the bot for any user or server that violates these terms.</p>
@@ -437,26 +437,17 @@ function App() {
                 <li>Giphy for GIF search</li>
               </ul>
 
-              <h3>6. Data Retention</h3>
-              <p>We retain your data for as long as necessary to provide our services. You can request data deletion by contacting us.</p>
+              <h3>6. Data Retention and Deletion</h3>
+              <p>Riko retains user and server data for as long as necessary to provide its features. Currently, users cannot request data deletion. If you wish to stop data collection, you may remove Riko from your Discord server or stop interacting with the Bot.</p>
 
-              <h3>7. Your Rights</h3>
-              <p>You have the right to:</p>
-              <ul>
-                <li>Request access to your data</li>
-                <li>Request correction of your data</li>
-                <li>Request deletion of your data</li>
-                <li>Opt-out of certain data collection</li>
-              </ul>
-
-              <h3>8. Children's Privacy</h3>
+              <h3>7. Children's Privacy</h3>
               <p>The bot is not intended for users under 13 years of age. We do not knowingly collect data from children under 13.</p>
 
-              <h3>9. Changes to Privacy Policy</h3>
+              <h3>8. Changes to Privacy Policy</h3>
               <p>We may update this Privacy Policy at any time. We will notify users of significant changes.</p>
 
-              <h3>10. Contact</h3>
-              <p>For privacy concerns or data requests, please contact us through our support server.</p>
+              <h3>9. Contact</h3>
+              <p>For questions or concerns about this Privacy Policy, please contact us through our support server.</p>
             </div>
           </section>
         </main>
