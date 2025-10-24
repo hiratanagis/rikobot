@@ -1,5 +1,5 @@
 import { Routes, Route, Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
-import { useState } from 'react'; // <--- useState masih dipake buat mobile menu
+import { useState, useEffect } from 'react'; // <--- useState masih dipake buat mobile menu
 
 import './App.css';
 
@@ -13,6 +13,10 @@ function App() {
   };
   const [activeCommandTab, setActiveCommandTab] = useState('admin');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location.pathname]);
 
   const commandsData = {
     admin: [
