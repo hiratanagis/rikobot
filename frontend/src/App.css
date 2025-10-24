@@ -106,6 +106,9 @@ body {
 }
 
 .logo-icon {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
   font-size: 2rem;
   animation: bounce 2s ease-in-out infinite;
 }
