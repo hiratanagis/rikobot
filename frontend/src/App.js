@@ -221,7 +221,7 @@ function App() {
       <nav className="nav-container">
         <div className="nav-content">
           <div className="nav-logo">
-            <span className="logo-icon">🤖</span>
+            <img src="https://raw.githubusercontent.com/hiratanagis/Riko-web/refs/heads/main/assets/IMG_20251024_094450-removebg-preview%20(2).png" alt="Riko bot logo" className="logo-icon"/>
             <span className="logo-text">Riko Bot</span>
           </div>
 
