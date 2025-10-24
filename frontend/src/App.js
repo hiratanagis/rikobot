@@ -1,15 +1,18 @@
-import { useState, useEffect } from 'react';
+import { Routes, Route, Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { useState } from 'react'; // <--- useState masih dipake buat mobile menu
+
 import './App.css';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('home');
+  const location = useLocation();
+  const navigate = useNavigate();
+  const getNavLinkClass = (path) => {
+    const currentPath = location.pathname === '/home' ? '/' : location.pathname;
+    const targetPath = path === '/home' ? '/' : path;
+    return currentPath === targetPath ? 'nav-link active' : 'nav-link';
+  };
   const [activeCommandTab, setActiveCommandTab] = useState('admin');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  // Scroll to top when changing tabs
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [activeTab]);
 
   const commandsData = {
     admin: [
@@ -227,10 +230,10 @@ function App() {
 
           {/* Desktop Navigation */}
           <div className="nav-links hidden md:flex">
-            <button onClick={() => setActiveTab('home')} href="#home" className={activeTab === 'home' ? 'nav-link active' : 'nav-link'}>Home</button>
-            <button onClick={() => setActiveTab('commands')} href="#commands" className={activeTab === 'commands' ? 'nav-link active' : 'nav-link'}>Commands</button>
-            <button onClick={() => setActiveTab('tos')} href="#tos" className={activeTab === 'tos' ? 'nav-link active' : 'nav-link'}>TOS</button>
-            <button onClick={() => setActiveTab('privacy')} href="#privacy-policy" className={activeTab === 'privacy' ? 'nav-link active' : 'nav-link'}>Privacy</button>
+            <Link to="/home" className={getNavLinkClass('/home')}>Home</Link>
+            <Link to="/commands" className={getNavLinkClass('/commands')}>Commands</Link>
+            <Link to="/tos" className={getNavLinkClass('/tos')}>TOS</Link>
+            <Link to="/privacy" className={getNavLinkClass('/privacy')}>Privacy</Link>
             <a href="https://discord.com/api/oauth2/authorize?client_id=709305478882000918&scope=bot+applications.commands&permissions=3097754271607927" className="btn-primary ml-4">Invite Now</a>
           </div>
 
@@ -245,18 +248,20 @@ function App() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="mobile-menu">
-            <button onClick={() => { setActiveTab('home'); setMobileMenuOpen(false); }} href="#home" className={activeTab === 'home' ? 'mobile-link active' : 'mobile-link'}>Home</button>
-            <button onClick={() => { setActiveTab('commands'); setMobileMenuOpen(false); }} href="#commands" className={activeTab === 'commands' ? 'mobile-link active' : 'mobile-link'}>Commands</button>
-            <button onClick={() => { setActiveTab('tos'); setMobileMenuOpen(false); }} href="#tos" className={activeTab === 'tos' ? 'mobile-link active' : 'mobile-link'}>TOS</button>
-            <button onClick={() => { setActiveTab('privacy'); setMobileMenuOpen(false); }} href="#privacy-policy" className={activeTab === 'privacy' ? 'mobile-link active' : 'mobile-link'}>Privacy</button>
+            <Link to="/home" onClick={() => setMobileMenuOpen(false)} className={getNavLinkClass('/home')}>Home</Link>
+            <Link to="/commands" onClick={() => setMobileMenuOpen(false)} className={getNavLinkClass('/commands')}>Commands</Link>
+            <Link to="/tos" onClick={() => setMobileMenuOpen(false)} className={getNavLinkClass('/tos')}>TOS</Link>
+            <Link to="/privacy" onClick={() => setMobileMenuOpen(false)} className={getNavLinkClass('/privacy')}>Privacy</Link>
             <a href="https://discord.com/api/oauth2/authorize?client_id=709305478882000918&scope=bot+applications.commands&permissions=3097754271607927" className="btn-primary block text-center mt-4">Invite Now</a>
           </div>
         )}
       </nav>
 
-      {/* Home Tab */}
-      {activeTab === 'home' && (
-        <main className="main-content">
+  <main className="main-content">
+    <Routes>
+      {/* Rute buat Home */}
+      <Route path="/home" element={
+        <>
           {/* Hero Section */}
           <section className="hero-section">
             <div className="hero-content">
@@ -270,7 +275,7 @@ function App() {
                 <a href="https://discord.com/api/oauth2/authorize?client_id=709305478882000918&scope=bot+applications.commands&permissions=3097754271607927" className="btn-primary btn-lg bubble-hover">
                   Invite Riko Now
                 </a>
-                <button onClick={() => setActiveTab('commands')} href="#commands" className="btn-secondary btn-lg">
+                <button onClick={() => navigate('/commands')} className="btn-secondary btn-lg">
                   View Commands
                 </button>
               </div>
@@ -301,12 +306,11 @@ function App() {
               </a>
             </div>
           </section>
-        </main>
-      )}
+        </>
+        } />
 
-      {/* Commands Tab */}
-      {activeTab === 'commands' && (
-        <main className="main-content">
+        {/* Rute buat Commands */}
+        <Route path="/commands" element={
           <section className="commands-section">
             <h2 className="section-title">Bot Commands</h2>
             <p className="text-gray-300 text-center mb-8 max-w-2xl mx-auto">
@@ -337,12 +341,10 @@ function App() {
               ))}
             </div>
           </section>
-        </main>
-      )}
+        } />
 
-      {/* TOS Tab */}
-      {activeTab === 'tos' && (
-        <main className="main-content">
+        {/* Rute buat TOS */}
+        <Route path="/tos" element={
           <section className="legal-section">
             <h2 className="section-title">Terms of Service</h2>
             <div className="legal-content">
@@ -385,12 +387,10 @@ function App() {
               <p>For questions about these Terms of Service, please contact us through our support server.</p>
             </div>
           </section>
-        </main>
-      )}
+        } />
 
-      {/* Privacy Tab */}
-      {activeTab === 'privacy' && (
-        <main className="main-content">
+        {/* Rute buat Privacy */}
+        <Route path="/privacy" element={
           <section className="legal-section">
             <h2 className="section-title">Privacy Policy</h2>
             <div className="legal-content">
@@ -450,17 +450,23 @@ function App() {
               <p>For questions or concerns about this Privacy Policy, please contact us through our support server.</p>
             </div>
           </section>
-        </main>
-      )}
+        } />
+        {/* Rute Default (kalo orang buka '/' doang) */}
+        <Route path="/" element={<Navigate to="/home" replace />} />
+          
+        {/* Rute Kalo Halaman Nggak Ketemu (Opsional) */}
+        <Route path="*" element={<Navigate to="/home" replace />} />
+    </Routes>
+  </main>
 
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
           <p>&copy; 2025 Riko Bot. All rights reserved.</p>
           <div className="footer-links">
-            <button onClick={() => setActiveTab('tos')} href="#tos" className="footer-link">Terms of Service</button>
+            <Link to="/tos" className="footer-link">Terms of Service</Link>
             <span className="text-gray-600">•</span>
-            <button onClick={() => setActiveTab('privacy')} href="#privacy-policy" className="footer-link">Privacy Policy</button>
+            <Link to="/privacy" className="footer-link">Privacy Policy</Link>
           </div>
         </div>
       </footer>
