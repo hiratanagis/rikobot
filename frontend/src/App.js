@@ -6,10 +6,10 @@ import './App.css';
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
-  const getNavLinkClass = (path) => {
+  const getNavLinkClass = (path, baseClass) => {
     const currentPath = location.pathname === '/home' ? '/' : location.pathname;
     const targetPath = path === '/home' ? '/' : path;
-    return currentPath === targetPath ? 'nav-link active' : 'nav-link';
+    return currentPath === targetPath ? `${baseClass} active` : baseClass;
   };
   const [activeCommandTab, setActiveCommandTab] = useState('admin');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -230,10 +230,10 @@ function App() {
 
           {/* Desktop Navigation */}
           <div className="nav-links hidden md:flex">
-            <Link to="/home" className={getNavLinkClass('/home')}>Home</Link>
-            <Link to="/commands" className={getNavLinkClass('/commands')}>Commands</Link>
-            <Link to="/tos" className={getNavLinkClass('/tos')}>TOS</Link>
-            <Link to="/privacy" className={getNavLinkClass('/privacy')}>Privacy</Link>
+            <Link to="/home" className={getNavLinkClass('/home', 'nav-link')}>Home</Link>
+            <Link to="/commands" className={getNavLinkClass('/commands', 'nav-link')}>Commands</Link>
+            <Link to="/tos" className={getNavLinkClass('/tos', 'nav-link')}>TOS</Link>
+            <Link to="/privacy" className={getNavLinkClass('/privacy', 'nav-link')}>Privacy</Link>
             <a href="https://discord.com/api/oauth2/authorize?client_id=709305478882000918&scope=bot+applications.commands&permissions=3097754271607927" className="btn-primary ml-4">Invite Now</a>
           </div>
 
@@ -248,10 +248,10 @@ function App() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="mobile-menu">
-            <Link to="/home" onClick={() => setMobileMenuOpen(false)} className={getNavLinkClass('/home')}>Home</Link>
-            <Link to="/commands" onClick={() => setMobileMenuOpen(false)} className={getNavLinkClass('/commands')}>Commands</Link>
-            <Link to="/tos" onClick={() => setMobileMenuOpen(false)} className={getNavLinkClass('/tos')}>TOS</Link>
-            <Link to="/privacy" onClick={() => setMobileMenuOpen(false)} className={getNavLinkClass('/privacy')}>Privacy</Link>
+            <Link to="/home" onClick={() => setMobileMenuOpen(false)} className={getNavLinkClass('/home', 'mobile-link')}>Home</Link>
+            <Link to="/commands" onClick={() => setMobileMenuOpen(false)} className={getNavLinkClass('/commands', 'mobile-link')}>Commands</Link>
+            <Link to="/tos" onClick={() => setMobileMenuOpen(false)} className={getNavLinkClass('/tos', 'mobile-link')}>TOS</Link>
+            <Link to="/privacy" onClick={() => setMobileMenuOpen(false)} className={getNavLinkClass('/privacy', 'mobile-link')}>Privacy</Link>
             <a href="https://discord.com/api/oauth2/authorize?client_id=709305478882000918&scope=bot+applications.commands&permissions=3097754271607927" className="btn-primary block text-center mt-4">Invite Now</a>
           </div>
         )}
