@@ -201,27 +201,10 @@ function App() {
       icon: (
         <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
   <path
-    strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
-    d="
-      M3.2 17.3
-      l2.6-7.3
-      l8.0 8.0
-      L3.2 17.3
-
-      M7.4 7.9
-      l3.1 3.1
-
-      M11.3 4.8
-      l2.3 2.3
-
-      M15.8 6.8
-      l2.4 1.1
-
-      M18.2 12.8
-      l1.2 2.3
-    "
+    strokeWidth="2"
+    d="M3 21l6-2 9-9-6-6L6 13 3 21z M15.5 3.5l1.6 3.2M18.5 6.5l2 1M12 1v3M9 4l-2 2M17 2l-1 2"
   />
 </svg>
 
